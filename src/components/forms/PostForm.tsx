@@ -1,8 +1,6 @@
-import * as z from "zod";
-import { Models } from "appwrite";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { zodResolver } from "@hookform/resolvers/zod";
+
+
+
 
 import {
   Form,
@@ -20,6 +18,12 @@ import { useToast } from "@/components/ui/use-toast";
 import { useUserContext } from "@/context/AuthContext";
 import { FileUploader, Loader } from "@/components/shared";
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queries";
+
+import * as z from "zod";
+import { useNavigate } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Models } from "appwrite";
+import { useForm } from "react-hook-form";
 
 type PostFormProps = {
   post?: Models.Document;
@@ -79,6 +83,8 @@ const PostForm = ({ post, action }: PostFormProps) => {
     navigate("/");
   };
 
+
+  
   return (
     <Form {...form}>
       <form
